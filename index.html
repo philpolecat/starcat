@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Open Graph for Facebook/Instagram/WhatsApp -->
+  <!-- Open Graph for Facebook / Instagram / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://philpolecat.github.io/starcat/">
   <meta property="og:title" content="Starcat Tour Dates">
@@ -11,10 +11,6 @@
   <meta property="og:image" content="https://philpolecat.github.io/starcat/og-wide-safe.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <!-- Optional extra image (some platforms may prefer square) -->
-  <meta property="og:image" content="https://philpolecat.github.io/starcat/og-square-safe.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="1200">
 
   <!-- X / Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -30,43 +26,76 @@
       margin: 0;
       padding: 16px;
       font-family: Arial, sans-serif;
-      background: #fff;
+      background: #ffffff;
       color: #111;
     }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
     }
+
+    .hero {
+      width: 100%;
+      max-width: 900px;
+      display: block;
+      margin: 0 auto 16px auto;
+      border-radius: 6px;
+    }
+
     .header {
       margin-bottom: 12px;
     }
+
     .header h1 {
       font-size: 20px;
       margin: 0 0 6px 0;
     }
+
     .header p {
       margin: 0;
       font-size: 14px;
       opacity: 0.8;
+    }
+
+    /* Hide Ents24 built-in header image */
+    .ents24-widget-header,
+    .ents24-widget-header-image,
+    .ents24-widget-header-wrapper {
+      display: none !important;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
+
+    <!-- Your banner image -->
+    <img
+      src="https://philpolecat.github.io/starcat/starcat-banner.jpg"
+      alt="Starcat"
+      class="hero"
+    />
+
     <div class="header">
       <h1>Starcat Tour Dates</h1>
       <p>Come and see us!</p>
     </div>
 
     <!-- Ents24 Widget -->
-    <a id="ents24-widget-shell"
-       href="https://www.ents24.com/uk/tour-dates/starcat"
-       data-widget-id="154">Starcat Tour Dates</a>
+    <a
+      id="ents24-widget-shell"
+      href="https://www.ents24.com/uk/tour-dates/starcat"
+      data-widget-id="154">
+      Starcat Tour Dates
+    </a>
 
-    <script type="module"
-            class="ents24-widget-script"
-            src="https://media.ents24network.com/thirdparty/widgets/widget.js"></script>
+    <script
+      type="module"
+      class="ents24-widget-script"
+      src="https://media.ents24network.com/thirdparty/widgets/widget.js">
+    </script>
+
   </div>
 </body>
 </html>
