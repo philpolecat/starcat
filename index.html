@@ -6,59 +6,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body { margin:0; padding:16px; font-family: Arial, sans-serif; background:#fff; color:#111; }
-    .container { max-width: 900px; margin: 0 auto; }
-    .hero { width:100%; display:block; margin:0 0 16px 0; border-radius:6px; }
-    h1 { font-size:20px; margin:0 0 6px 0; }
-    p { margin:0 0 12px 0; font-size:14px; opacity:0.8; }
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+    }
 
-    /* If Ents24 uses background-image for the hero, hide it */
-    #ents24-wrap [style*="background-image"] { display:none !important; }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      width: 100%;
+      display: block;
+      margin: 0 0 16px 0;
+      border-radius: 6px;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin: 0 0 6px 0;
+    }
+
+    p {
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      opacity: 0.8;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
+
+    <!-- Your banner -->
     <img class="hero" src="starcat-banner.jpg" alt="Starcat">
 
     <h1>Starcat Tour Dates</h1>
     <p>Come and see us!</p>
 
+    <!-- Ents24 widget mount point -->
     <div id="ents24-wrap">
-      <a id="ents24-widget-shell"
-         href="https://www.ents24.com/uk/tour-dates/starcat"
-         data-widget-id="154">Starcat Tour Dates</a>
+      <a
+        id="ents24-widget-shell"
+        href="https://www.ents24.com/uk/tour-dates/starcat"
+        data-widget-id="154">
+        Starcat Tour Dates
+      </a>
     </div>
 
+    <!-- Ents24 script -->
     <script type="module"
-            class="ents24-widget-script"
-            src="https://media.ents24network.com/thirdparty/widgets/widget.js"></script>
+      src="https://media.ents24network.com/thirdparty/widgets/widget.js">
+    </script>
 
+    <!-- Safe remover for Ents24 hero -->
     <script>
-      // After Ents24 renders, remove the first big "hero" block if present.
       (function () {
-        var tries = 0;
-        var timer = setInterval(function () {
-          tries++;
+        let attempts = 0;
+        const maxAttempts = 50;
 
-          var wrap = document.getElementById("ents24-wrap");
+        const timer = setInterval(function () {
+          attempts++;
+
+          const wrap = document.getElementById("ents24-wrap");
           if (!wrap) return;
 
-          // Look for injected widget container inside wrap
-          var injected = wrap.querySelector("div");
-          if (!injected) {
-            if (tries > 50) clearInterval(timer);
-            return;
+          // Look for any large block with background-image (the green hero)
+          const hero = wrap.querySelector('[style*="background-image"]');
+
+          if (hero) {
+            hero.style.display = "none";
+            clearInterval(timer);
           }
 
-          // Hide the first child block (usually the hero/banner)
-          var first = injected.firstElementChild;
-          if (first) first.style.display = "none";
-
-          clearInterval(timer);
+          if (attempts >= maxAttempts) {
+            clearInterval(timer);
+          }
         }, 200);
       })();
     </script>
+
   </div>
 </body>
 </html>
