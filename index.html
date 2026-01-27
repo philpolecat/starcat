@@ -1,4 +1,5 @@
-<!DOCTYPE html> 
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,5 +11,47 @@
   <meta property="og:description" content="Come and see us!">
   <meta property="og:image" content="https://philpolecat.github.io/starcat/og-wide-safe.jpg">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:heig
+  <meta property="og:image:height" content="630">
 
+  <!-- X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Starcat Tour Dates">
+  <meta name="twitter:description" content="Come and see us!">
+  <meta name="twitter:image" content="https://philpolecat.github.io/starcat/og-wide-safe.jpg">
+
+  <title>Starcat Tour Dates</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body { margin:0; padding:16px; font-family: Arial, sans-serif; background:#fff; color:#111; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .hero { width:100%; display:block; margin:0 auto 16px auto; border-radius:6px; }
+    .header { margin-bottom:12px; }
+    .header h1 { font-size:20px; margin:0 0 6px 0; }
+    .header p { margin:0; font-size:14px; opacity:0.8; }
+
+    /* Hide Ents24 green hero/banner safely (targets background-image blocks) */
+    #ents24-widget-shell [style*="background-image"] { display:none !important; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img class="hero" src="starcat-banner.jpg" alt="Starcat">
+
+    <div class="header">
+      <h1>Starcat Tour Dates</h1>
+      <p>Come and see us!</p>
+    </div>
+
+    <!-- Ents24 Widget -->
+    <a id="ents24-widget-shell"
+       href="https://www.ents24.com/uk/tour-dates/starcat"
+       data-widget-id="154">Starcat Tour Dates</a>
+
+    <script type="module"
+            class="ents24-widget-script"
+            src="https://media.ents24network.com/thirdparty/widgets/widget.js"></script>
+  </div>
+</body>
+</html>
