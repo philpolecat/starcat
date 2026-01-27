@@ -11,6 +11,9 @@
     .hero { width:100%; display:block; margin:0 0 16px 0; border-radius:6px; }
     h1 { font-size:20px; margin:0 0 6px 0; }
     p { margin:0 0 12px 0; font-size:14px; opacity:0.8; }
+
+    /* If Ents24 uses background-image for the hero, hide it */
+    #ents24-wrap [style*="background-image"] { display:none !important; }
   </style>
 </head>
 
@@ -21,39 +24,38 @@
     <h1>Starcat Tour Dates</h1>
     <p>Come and see us!</p>
 
-    <a id="ents24-widget-shell"
-       href="https://www.ents24.com/uk/tour-dates/starcat"
-       data-widget-id="154">Starcat Tour Dates</a>
+    <div id="ents24-wrap">
+      <a id="ents24-widget-shell"
+         href="https://www.ents24.com/uk/tour-dates/starcat"
+         data-widget-id="154">Starcat Tour Dates</a>
+    </div>
 
     <script type="module"
             class="ents24-widget-script"
             src="https://media.ents24network.com/thirdparty/widgets/widget.js"></script>
 
     <script>
-      // Hide the Ents24 top hero/banner area after the widget renders.
-      // This is more reliable than guessing Ents24 class names.
+      // After Ents24 renders, remove the first big "hero" block if present.
       (function () {
-        function hideEntsHero() {
-          var shell = document.getElementById("ents24-widget-shell");
-          if (!shell) return false;
-
-          // Ents24 replaces the <a> with a <div id="ents24-widget-shell">...</div>
-          // Find the main widget container and hide its first large block.
-          var app = shell.querySelector(".app");
-          if (!app) return false;
-
-          var firstBlock = app.firstElementChild;
-          if (!firstBlock) return false;
-
-          firstBlock.style.display = "none";
-          return true;
-        }
-
-        // Try a few times because the widget loads async.
         var tries = 0;
         var timer = setInterval(function () {
-          tries += 1;
-          if (hideEntsHero() || tries > 30) clearInterval(timer);
+          tries++;
+
+          var wrap = document.getElementById("ents24-wrap");
+          if (!wrap) return;
+
+          // Look for injected widget container inside wrap
+          var injected = wrap.querySelector("div");
+          if (!injected) {
+            if (tries > 50) clearInterval(timer);
+            return;
+          }
+
+          // Hide the first child block (usually the hero/banner)
+          var first = injected.firstElementChild;
+          if (first) first.style.display = "none";
+
+          clearInterval(timer);
         }, 200);
       })();
     </script>
