@@ -2,6 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
+  <!-- Open Graph for Facebook / Instagram / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://philpolecat.github.io/starcat/">
+  <meta property="og:title" content="Starcat Tour Dates">
+  <meta property="og:description" content="Come and see us!">
+  <meta property="og:image" content="https://philpolecat.github.io/starcat/og-wide-safe.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Starcat Tour Dates">
+  <meta name="twitter:description" content="Come and see us!">
+  <meta name="twitter:image" content="https://philpolecat.github.io/starcat/og-wide-safe.jpg">
+
   <title>Starcat Tour Dates</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,51 +59,27 @@
   <div class="container">
 
     <!-- Your banner -->
-    <img class="hero" src="starcat-banner.jpg" alt="Starcat">
+    <img
+      class="hero"
+      src="starcat-banner.jpg"
+      alt="Starcat"
+    />
 
     <h1>Starcat Tour Dates</h1>
     <p>Come and see us!</p>
 
-    <!-- Ents24 widget mount point -->
-    <div id="ents24-wrap">
-      <a
-        id="ents24-widget-shell"
-        href="https://www.ents24.com/uk/tour-dates/starcat"
-        data-widget-id="154">
-        Starcat Tour Dates
-      </a>
-    </div>
+    <!-- Ents24 Widget (updated, no image) -->
+    <a
+      id="ents24-widget-shell"
+      href="https://www.ents24.com/uk/tour-dates/starcat"
+      data-widget-id="155">
+      Starcat Tour Dates
+    </a>
 
-    <!-- Ents24 script -->
-    <script type="module"
+    <script
+      type="module"
+      class="ents24-widget-script"
       src="https://media.ents24network.com/thirdparty/widgets/widget.js">
-    </script>
-
-    <!-- Safe remover for Ents24 hero -->
-    <script>
-      (function () {
-        let attempts = 0;
-        const maxAttempts = 50;
-
-        const timer = setInterval(function () {
-          attempts++;
-
-          const wrap = document.getElementById("ents24-wrap");
-          if (!wrap) return;
-
-          // Look for any large block with background-image (the green hero)
-          const hero = wrap.querySelector('[style*="background-image"]');
-
-          if (hero) {
-            hero.style.display = "none";
-            clearInterval(timer);
-          }
-
-          if (attempts >= maxAttempts) {
-            clearInterval(timer);
-          }
-        }, 200);
-      })();
     </script>
 
   </div>
