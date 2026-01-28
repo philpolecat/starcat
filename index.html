@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -37,6 +37,17 @@
       font-size:14px;
     }
     .buy:hover { background:#111; color:#fff; }
+
+    .soldout {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      background: #eee;
+      color: #666;
+      border: 1px solid #ccc;
+      cursor: default;
+    }
   </style>
 </head>
 
@@ -55,7 +66,7 @@
     <div class="gig">
       <div class="gig-title">10 February 2026 — The Hope &amp; Ruin</div>
       <div class="gig-meta">Brighton</div>
-      <a class="buy" href="https://www.ents24.com/brighton-events/the-hope-and-ruin/starcat/7405923" target="_blank" rel="noopener">Buy tickets</a>
+      <span class="soldout">Sold out</span>
     </div>
 
     <div class="gig">
@@ -71,9 +82,15 @@
     </div>
 
     <div class="gig">
-      <div class="gig-title">14 February 2026 — Thomas House</div>
+      <div class="gig-title">14 February 2026 — Thomas House (Matinee)</div>
       <div class="gig-meta">Dublin</div>
       <a class="buy" href="https://www.eventbrite.ie/e/star-cat-matinee-tickets-1976631650476?aff=ebdssbdestsearch&_gl=1*1hwudwf*_up*MQ..*_ga*MTQ2ODk3OTUxMS4xNzY5NTU2NjA2*_ga_TQVES5V6SH*czE3Njk1NTY2MDUkbzEkZzAkdDE3Njk1NTY2MDUkajYwJGwwJGgw" target="_blank" rel="noopener">Buy tickets</a>
+    </div>
+
+    <div class="gig">
+      <div class="gig-title">14 February 2026 — Thomas House (Second show)</div>
+      <div class="gig-meta">Dublin</div>
+      <span class="soldout">Sold out</span>
     </div>
 
     <div class="gig">
@@ -85,5 +102,3 @@
   </div>
 </body>
 </html>
-
-
