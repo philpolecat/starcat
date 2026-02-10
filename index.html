@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,20 +12,15 @@
   <meta property="og:description" content="Come and see us!">
   <meta property="og:image" content="https://philpolecat.github.io/starcat/og-wide-safe.jpg">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Starcat Tour Dates">
-  <meta name="twitter:description" content="Come and see us!">
-  <meta name="twitter:image" content="https://philpolecat.github.io/starcat/og-wide-safe.jpg">
-
   <style>
     body { margin:0; padding:16px; font-family: Arial, sans-serif; background:#fff; color:#111; }
     .container { max-width: 900px; margin: 0 auto; }
     .hero { width:100%; display:block; margin:0 0 20px 0; border-radius:6px; }
-    h1 { font-size: 22px; margin: 0 0 12px 0; }
+    h1 { font-size:22px; margin:0 0 12px 0; }
 
-    .gig { padding: 14px 0; border-bottom: 1px solid #ddd; }
-    .gig-title { font-weight: bold; }
-    .gig-meta { font-size: 14px; opacity: 0.8; margin: 4px 0 8px 0; }
+    .gig { padding:14px 0; border-bottom:1px solid #ddd; }
+    .gig-title { font-weight:bold; }
+    .gig-meta { font-size:14px; opacity:0.8; margin:4px 0 8px 0; }
 
     .buy {
       display:inline-block;
@@ -39,13 +34,24 @@
     .buy:hover { background:#111; color:#fff; }
 
     .soldout {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 6px;
-      font-size: 14px;
-      background: #eee;
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:6px;
+      font-size:14px;
+      background:#eee;
+      color:#666;
+      border:1px solid #ccc;
+    }
+
+    /* PAST EVENTS: greyed out, link disabled */
+    .past {
+      opacity: 0.45;
+    }
+    .past .buy {
+      pointer-events: none;
+      border-color: #ccc;
       color: #666;
-      border: 1px solid #ccc;
+      background: none;
       cursor: default;
     }
   </style>
@@ -57,42 +63,49 @@
 
     <h1>Starcat Tour Dates</h1>
 
-    <div class="gig">
+    <!-- PAST -->
+    <div class="gig past">
       <div class="gig-title">8 February 2026 — 100 Club</div>
       <div class="gig-meta">London</div>
-      <a class="buy" href="https://wegottickets.com/event/684227" target="_blank" rel="noopener">Buy tickets</a>
+      <a class="buy" href="#">Buy tickets</a>
     </div>
 
+    <!-- SOLD OUT -->
     <div class="gig">
       <div class="gig-title">10 February 2026 — The Hope &amp; Ruin</div>
       <div class="gig-meta">Brighton</div>
       <span class="soldout">Sold out</span>
     </div>
 
+    <!-- FUTURE -->
     <div class="gig">
       <div class="gig-title">12 February 2026 — The Facebar</div>
       <div class="gig-meta">Reading</div>
       <a class="buy" href="https://wegottickets.com/f/15395" target="_blank" rel="noopener">Buy tickets</a>
     </div>
 
+    <!-- FUTURE -->
     <div class="gig">
       <div class="gig-title">13 February 2026 — The Black Prince</div>
       <div class="gig-meta">Northampton</div>
       <a class="buy" href="https://wegottickets.com/event/684461" target="_blank" rel="noopener">Buy tickets</a>
     </div>
 
+    <!-- FUTURE -->
     <div class="gig">
       <div class="gig-title">14 February 2026 — Thomas House (Matinee)</div>
       <div class="gig-meta">Dublin</div>
-      <a class="buy" href="https://www.eventbrite.ie/e/star-cat-matinee-tickets-1976631650476?aff=ebdssbdestsearch&_gl=1*1hwudwf*_up*MQ..*_ga*MTQ2ODk3OTUxMS4xNzY5NTU2NjA2*_ga_TQVES5V6SH*czE3Njk1NTY2MDUkbzEkZzAkdDE3Njk1NTY2MDUkajYwJGwwJGgw" target="_blank" rel="noopener">Buy tickets</a>
+      <a class="buy" href="https://www.eventbrite.ie/e/star-cat-matinee-tickets-1976631650476" target="_blank" rel="noopener">Buy tickets</a>
     </div>
 
+    <!-- SOLD OUT -->
     <div class="gig">
       <div class="gig-title">14 February 2026 — Thomas House (Second show)</div>
       <div class="gig-meta">Dublin</div>
       <span class="soldout">Sold out</span>
     </div>
 
+    <!-- FUTURE -->
     <div class="gig">
       <div class="gig-title">15 February 2026 — The Portland Arms</div>
       <div class="gig-meta">Cambridge</div>
@@ -102,4 +115,3 @@
   </div>
 </body>
 </html>
-
